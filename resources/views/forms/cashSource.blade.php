@@ -1,4 +1,6 @@
-<form action="{{ route('transactions.store') }}" method="POST" name="cashSourceForm">
+<form action="{{ route('transactions.store') }}" method="POST">
+    @csrf
+    <input type="hidden" name="form-name" value="cashSourceForm">
     <div class="mb-5">
         <label class="col-2 form-label fs-5">Choose an amount</label>
         <label class="btn btn-secondary form-label fs-5">
