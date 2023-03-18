@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CashMachineController;
+use App\Http\Controllers\MoneyTransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
-Route::post('transactions', [CashMachineController::class, 'store'])->name('transactions.store');
-Route::get('transactions/{id}', [CashMachineController::class, 'show'])->name('transactions.show');
+Route::post('transactions', [MoneyTransactionController::class, 'store'])->name('transactions.store');
+Route::get('transactions/{id}', [MoneyTransactionController::class, 'show'])->name('transactions.show');
