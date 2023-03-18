@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('money_transactions', function (Blueprint $table) {
             $table->id();
             $table->decimal('transaction_amount', 9)->default(0);
-            $table->json('transaction_details');
+            $table->json('transaction_details')->nullable();
             $table->timestamps();
         });
     }
