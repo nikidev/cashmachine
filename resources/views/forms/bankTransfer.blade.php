@@ -7,7 +7,7 @@
         <div class="flex-fill mx-3">
             <div class="form-outline">
                 <input type="text" id="account-number" name="account-number" class="form-control form-control-lg @error('account-number') is-invalid @enderror"
-                       placeholder="1234AB" data-mdb-showcounter="true" minlength="6" maxlength="6" required />
+                       placeholder="1234AB" data-mdb-showcounter="true" minlength="6" maxlength="6" value="{{ old('account-number') }}" required />
                 <label class="form-label" for="account-number">Account Number</label>
                 @error('account-number')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -19,7 +19,7 @@
 
     <div class="form-outline mb-5">
         <input type="text" id="customer-name" name="customer-name" class="form-control form-control-lg @error('customer-name') is-invalid @enderror"
-               placeholder="Anna Doe" required />
+               placeholder="Anna Doe" value="{{ old('customer-name') }}" required />
         <label class="form-label" for="customer-name">Customer Name</label>
         @error('customer-name')
             <div class="invalid-feedback">{{ $message }}</div>
@@ -30,7 +30,7 @@
         <div class="col-6">
             <div class="form-outline">
                 <input type="text" id="transfer-date" name="transfer-date" class="form-control form-control-lg @error('transfer-date') is-invalid @enderror"
-                       placeholder="DD/MM/YYYY" minlength="10" maxlength="10" required />
+                       placeholder="DD/MM/YYYY" minlength="10" maxlength="10" value="{{ old('transfer-date') }}" required />
                 <label class="form-label" for="transfer-date">Transfer Date</label>
                 @error('transfer-date')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -41,7 +41,8 @@
             <div class="form-outline">
                 <i class="fas fa-dollar-sign trailing"></i>
                 <input type="number" id="amount-bank-transfer" name="amount-bank-transfer"
-                       class="form-control form-icon-trailing form-control-lg @error('amount-bank-transfer') is-invalid @enderror" required />
+                       class="form-control form-icon-trailing form-control-lg @error('amount-bank-transfer') is-invalid @enderror"
+                       value="{{ old('amount-bank-transfer') }} }}" required />
                 <label class="form-label" for="amount-bank-transfer">Amount</label>
                 @error('amount-bank-transfer')
                     <div class="invalid-feedback">{{ $message }}</div>
