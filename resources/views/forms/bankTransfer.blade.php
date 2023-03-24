@@ -1,6 +1,5 @@
 <form action="{{ route('transactions.store') }}" method="POST">
     @csrf
-    <input type="hidden" name="form-name" value="BankTransaction">
     <div class="d-flex flex-row align-items-center mb-4 pb-1">
         <i class="fas fa-arrow-down-a-z fa-2x"></i>
         <i class="fas fa-arrow-down-1-9 fa-2x"></i>
