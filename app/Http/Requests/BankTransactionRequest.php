@@ -24,7 +24,7 @@ class BankTransactionRequest extends FormRequest
     {
         return [
             'account-number' => 'required|size:6|alpha_num',
-            'customer-name' => 'required|alpha:ascii',
+            'customer-name' => 'required|regex:/[a-zA-Z0-9\s]/',
             'transfer-date' => 'required|size:10|date_format:d/m/Y|after_or_equal:today',
             'amount-bank-transfer' => 'required|numeric',
         ];

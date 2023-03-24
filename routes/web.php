@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BankTransactionController;
+use App\Http\Controllers\CardTransactionController;
+use App\Http\Controllers\CashTransactionController;
 use App\Http\Controllers\MoneyTransactionController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +21,8 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::post('transactions', [MoneyTransactionController::class, 'store'])->name('transactions.store');
+Route::post('transactions/cash', [CashTransactionController::class, 'store'])->name('transactions.cash.store');
+Route::post('transactions/card', [CardTransactionController::class, 'store'])->name('transactions.card.store');
+Route::post('transactions/bank', [BankTransactionController::class, 'store'])->name('transactions.bank.store');
+
 Route::get('transactions/{id}', [MoneyTransactionController::class, 'show'])->name('transactions.show');

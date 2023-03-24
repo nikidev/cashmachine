@@ -1,4 +1,4 @@
-<form action="{{ route('transactions.store') }}" method="POST">
+<form action="{{ route('transactions.bank.store') }}" method="POST">
     @csrf
     <div class="d-flex flex-row align-items-center mb-4 pb-1">
         <i class="fas fa-arrow-down-a-z fa-2x"></i>
@@ -41,7 +41,7 @@
                 <i class="fas fa-dollar-sign trailing"></i>
                 <input type="number" id="amount-bank-transfer" name="amount-bank-transfer"
                        class="form-control form-icon-trailing form-control-lg @error('amount-bank-transfer') is-invalid @enderror"
-                       value="{{ old('amount-bank-transfer') }} }}" required />
+                       value="{{ old('amount-bank-transfer') }}" step="0.01" required />
                 <label class="form-label" for="amount-bank-transfer">Amount</label>
                 @error('amount-bank-transfer')
                     <div class="invalid-feedback">{{ $message }}</div>

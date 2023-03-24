@@ -24,7 +24,7 @@ class CardTransactionRequest extends FormRequest
     {
         return [
             'card-number' => 'required|starts_with:4|numeric|digits:16',
-            'card-holder' => 'required|alpha:ascii',
+            'card-holder' => 'required|regex:/[a-zA-Z0-9\s]/',
             'expiration-date' => 'required|size:7|date_format:m/Y|after:+2 months',
             'cvv' => 'required|numeric|digits:3',
             'amount-card' => 'required|numeric',

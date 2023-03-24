@@ -1,4 +1,4 @@
-<form action="{{ route('transactions.store') }}" method="POST">
+<form action="{{ route('transactions.card.store') }}" method="POST">
     @csrf
     <div class="d-flex flex-row align-items-center mb-4 pb-1">
         <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" />
@@ -49,7 +49,7 @@
             <div class="form-outline">
                 <i class="fas fa-dollar-sign trailing"></i>
                 <input type="number" id="amount-card" name="amount-card" class="form-control form-icon-trailing form-control-lg
-                    @error('amount-card') is-invalid @enderror" value="{{ old('amount-card') }}" required />
+                    @error('amount-card') is-invalid @enderror" value="{{ old('amount-card') }}" step="0.01" required />
                 <label class="form-label" for="amount-card">Amount</label>
                 @error('amount-card')
                     <div class="invalid-feedback">{{ $message }}</div>

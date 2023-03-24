@@ -7,18 +7,10 @@ use Illuminate\View\View;
 
 class MoneyTransactionController extends Controller
 {
-
-    public function store(MoneyTransaction $transaction)
-    {
-
-    }
-
-
     public function show(int $id): View
     {
        $moneyTransaction = MoneyTransaction::findOrFail($id);
 
        return view('moneytransactions.show', ['moneyTransaction' => $moneyTransaction]);
     }
-
 }

@@ -14,4 +14,8 @@ class MoneyTransaction extends Model
     use HasFactory;
 
     protected $fillable = ['transaction_amount', 'transaction_details'];
+
+    protected $casts = [
+        'transaction_details' => 'array'
+    ];
 }

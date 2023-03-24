@@ -11,7 +11,7 @@
                 <p class="card-text">Total Amount: {{ $moneyTransaction->transaction_amount }}</p>
                 @if($moneyTransaction->transaction_details ?? false)
                     @foreach($moneyTransaction->transaction_details as $key => $transactionDetail)
-                        <p class="card-text">{{ $key }}: {{ $transactionDetail }}</p>
+                        <p class="card-text">{{ ucwords(str_replace('-', ' ', $key)) }}: {{ $transactionDetail }}</p>
                     @endforeach
                 @endif
             </div>

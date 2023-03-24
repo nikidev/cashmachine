@@ -1,4 +1,4 @@
-<form action="{{ route('transactions.store') }}" method="POST">
+<form action="{{ route('transactions.cash.store') }}" method="POST">
     @csrf
     <div class="mb-5">
         <label class="col-2 form-label fs-5">Choose an amount</label>
