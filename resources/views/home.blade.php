@@ -18,7 +18,13 @@
             </div>
             <div class="card-body">
                 <div class="tab-content">
+                    @error('error-limit-total-processing')
+                        <div class="text-danger text-center fs-5">{{ $message }}</div>
+                    @enderror
                     <div class="tab-pane fade show active" id="tab-cash" role="tabpanel">
+                        @error('error-limit-cash')
+                            <div class="text-danger text-center fs-5">{{ $message }}</div>
+                        @enderror
                         @include('forms.cashSource')
                     </div>
                     <div class="tab-pane fade" id="tab-credit-card" role="tabpanel">

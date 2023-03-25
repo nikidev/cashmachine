@@ -12,6 +12,12 @@ class BankTransactionController extends Controller
     {
         $bankTransaction = $service->store(BankTransaction::class, $request);
 
+        if(!$bankTransaction) {
+            return redirect()->back()->withErrors([
+                'error-limit-total-processing' => 'The limit for total processing of transactions is reached !'
+            ]);
+        }
+
         return redirect('/transactions/'. $bankTransaction->id);
     }
 }

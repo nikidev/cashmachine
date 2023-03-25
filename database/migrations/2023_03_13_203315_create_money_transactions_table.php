@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->decimal('transaction_amount', 9)->default(0);
             $table->json('transaction_details')->nullable();
+            $table->decimal('total_cash_amount', 9)->default(0);
+            $table->decimal('total_processing_amount', 9)->default(0);
             $table->timestamps();
         });
     }

@@ -12,6 +12,12 @@ class CashTransactionController extends Controller
     {
         $cashTransaction = $service->store(CashTransaction::class, $request);
 
+        if(!$cashTransaction) {
+            return redirect()->back()->withErrors([
+                'error-limit-cash' => 'The limit for cash transactions is reached !'
+            ]);
+        }
+
         return redirect('/transactions/'. $cashTransaction->id);
     }
 }

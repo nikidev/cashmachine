@@ -12,6 +12,12 @@ class CardTransactionController extends Controller
     {
         $cardTransaction = $service->store(CardTransaction::class, $request);
 
+        if(!$cardTransaction) {
+            return redirect()->back()->withErrors([
+                'error-limit-total-processing' => 'The limit for total processing of transactions is reached !'
+            ]);
+        }
+
         return redirect('/transactions/'. $cardTransaction->id);
     }
 }
